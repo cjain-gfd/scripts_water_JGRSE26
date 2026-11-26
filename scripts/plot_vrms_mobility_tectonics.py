@@ -1,6 +1,7 @@
 # !/usr/bin/env python
 
 # written on 9 Apr 2026 by Charitra Jain
+# updated on 26 Nov 2026 with legends
 # to plot rms surface velocities, mobility and inferred tectonic regimes
 # for models presented in the manuscript
 # Jain & Sobolev (2026): Controls on the tectonic evolution of the early Earth: 2. Contrastive effects of water
@@ -154,7 +155,7 @@ for path in model_list:
    nz = 128
 
    # from stagpy import stagyydata
-   sdat = stagyydata.StagyyData(here+'/'+str(model_folder)+path)
+   sdat = stagyydata.StagyyData(here+'/../'+str(model_folder)+path)
 
    # extracting time from time_botT.h5
    # this is needed when plotting the time evolution of a field
@@ -317,6 +318,8 @@ for path in model_list:
    
 
    current_model=path[0:len(path)-1]
+   loc1='upper right'
+   loc2='lower right'
 
    if current_model == '03_AT19r1':
       ax[0][0].fill_betweenx(time_Myr_run[run],0.,270.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
@@ -328,7 +331,9 @@ for path in model_list:
       ax[0][0].fill_betweenx(time_Myr_run[run],1730.,4500.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].axvline(231., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(987., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
-      ax[0][0].axvline(3403., color='#000000', linestyle='--',linewidth=1, alpha=0.5)      
+      ax[0][0].axvline(3403., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='lower center'
+      loc2='lower right'
    elif current_model == '07_QW5r1':
       ax[0][0].fill_betweenx(time_Myr_run[run],0.,190.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].fill_betweenx(time_Myr_run[run],190.,440.,   linewidth=0,color = RO,alpha=1,edgecolor='none')
@@ -344,6 +349,8 @@ for path in model_list:
       ax[0][0].axvline(501., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(1954., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(3360., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='lower center'
+      loc2='upper right'
    elif current_model == '13_QW10hr1':
       ax[0][0].fill_betweenx(time_Myr_run[run],0.,350.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].fill_betweenx(time_Myr_run[run],350.,420.,   linewidth=0,color = RO,alpha=1,edgecolor='none')
@@ -364,7 +371,9 @@ for path in model_list:
       ax[0][0].fill_betweenx(time_Myr_run[run],4260.,4500.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].axvline(437., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(1993., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
-      ax[0][0].axvline(3118., color='#000000', linestyle='--',linewidth=1, alpha=0.5)       
+      ax[0][0].axvline(3118., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='lower center'
+      loc2='upper right'
    elif current_model == '06_Qaw20r3':
       ax[0][0].fill_betweenx(time_Myr_run[run],0.,200.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].fill_betweenx(time_Myr_run[run],200.,420.,   linewidth=0,color = RO,alpha=1,edgecolor='none')
@@ -385,6 +394,8 @@ for path in model_list:
       ax[0][0].axvline(76., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(1937., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(3121., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='lower left'
+      loc2='upper right'
    elif current_model == '07_Qaw20sat20r1':
       ax[0][0].fill_betweenx(time_Myr_run[run],0.,400.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].fill_betweenx(time_Myr_run[run],400.,500.,   linewidth=0,color = RO,alpha=1,edgecolor='none')
@@ -403,6 +414,8 @@ for path in model_list:
       ax[0][0].axvline(379., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(1839., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(3150., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='upper center'
+      loc2='upper right'
    elif current_model == '19_Qsat20H2Oetar3':
       ax[0][0].fill_betweenx(time_Myr_run[run],0.,270.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].fill_betweenx(time_Myr_run[run],270.,400.,   linewidth=0,color = PSL,alpha=1,edgecolor='none')
@@ -417,6 +430,8 @@ for path in model_list:
       ax[0][0].axvline(253., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(2111., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(3033., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='upper right'
+      loc2='lower right'
    elif current_model == '21_Qsat25H2Oetar2':
       ax[0][0].fill_betweenx(time_Myr_run[run],0.,500.,  linewidth=0,color = ML,alpha=0.8,edgecolor='none')
       ax[0][0].fill_betweenx(time_Myr_run[run],500.,650.,  linewidth=0,color = PSL,alpha=1,edgecolor='none')
@@ -434,7 +449,8 @@ for path in model_list:
       ax[0][0].axvline(281., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(2080., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(3169., color='#000000', linestyle='--',linewidth=1, alpha=0.5)
-
+      loc1='lower center'
+      loc2='upper right'
 
    ax[0][0].set_xlim(0., evolved_time)
    ax[0][0].set_xscale('linear')
@@ -445,6 +461,8 @@ for path in model_list:
    ax[0][0].set_ylabel('$v_{rms}$ (cm/yr)',labelpad=4)
    ax[0][0].set_xlabel('Time (Myr)')
    ax[0][0].set_box_aspect(1/box_ratio)
+   ax[0][0].legend(ncol = 1, labels=['v$_{rms}$'], loc=loc1, \
+   labelspacing = 0.5, edgecolor = 'none', facecolor = 'none', fancybox = False)   
 
    ax2 = ax[0][0].twinx()
    ax2.plot(time_Myr_run[run],moving_average_mobility_run[run], linestyle='-', linewidth=1, alpha=0.7, color = '#ffffff')
@@ -455,7 +473,9 @@ for path in model_list:
    ax2.set_ylim(0.,max_mobility)
    ax2.set_yticks(mobility_ticks)
    ax2.set_ylabel('Mobility',labelpad=4)
-   ax2.set_box_aspect(1/box_ratio)      
+   ax2.set_box_aspect(1/box_ratio)
+   ax2.legend(ncol = 1, labels=['mobility'], loc=loc2, \
+   labelspacing = 0.5, labelcolor = '#ffffff', edgecolor = 'none', facecolor = 'none', fancybox = False)
 
 
    present_day_TTG=2.171e22
@@ -480,6 +500,8 @@ for path in model_list:
       ax[0][0].axvline(478.98, color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(684.24, color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(1224.83, color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='upper right'
+      loc2='lower right'
       evolved_time=1500.  
       time_ticks=[0,300,600,900,1200,1500]
       ax[0][0].set_xlim(0., evolved_time)
@@ -490,6 +512,8 @@ for path in model_list:
       ax[0][0].set_yticks(vrms_ticks)
       ax[0][0].set_ylabel('$v_{rms}$ (cm/yr)',labelpad=4)
       ax[0][0].set_box_aspect(1/box_ratio)
+      ax[0][0].legend(ncol = 1, labels=['v$_{rms}$'], loc=loc1, \
+      labelspacing = 0.5, edgecolor = 'none', facecolor = 'none', fancybox = False)  
 
       ax2 = ax[0][0].twinx()
       ax2.plot(time_Myr_run[run],moving_average_mobility_run[run], linestyle='-', linewidth=1, alpha=0.7, color = '#ffffff')
@@ -501,6 +525,8 @@ for path in model_list:
       ax2.set_yticks(mobility_ticks)
       ax2.set_ylabel('Mobility',labelpad=4)
       ax2.set_box_aspect(1/box_ratio)
+      ax2.legend(ncol = 1, labels=['mobility'], loc=loc2, \
+      labelspacing = 0.5, labelcolor = '#ffffff', edgecolor = 'none', facecolor = 'none', fancybox = False)
 
       ax[1][0].plot(time_Myr_step_run[run],TotalTTGmass_run[run]/present_day_TTG, linestyle='-', linewidth=1, alpha=1, color = '#000000')
       ax[1][0].fill_betweenx(time_Myr_run[run],0.,469.,  linewidth=0,color = '#AE027E',alpha=1,edgecolor='none')
@@ -536,6 +562,8 @@ for path in model_list:
       ax[0][0].axvline(201.05, color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(688.41, color='#000000', linestyle='--',linewidth=1, alpha=0.5)
       ax[0][0].axvline(1234.58, color='#000000', linestyle='--',linewidth=1, alpha=0.5)
+      loc1='upper right'
+      loc2='lower right'
       evolved_time=1500.  
       time_ticks=[0,300,600,900,1200,1500]
       ax[0][0].set_xlim(0., evolved_time)
@@ -546,6 +574,8 @@ for path in model_list:
       ax[0][0].set_yticks(vrms_ticks)
       ax[0][0].set_ylabel('$v_{rms}$ (cm/yr)',labelpad=4)
       ax[0][0].set_box_aspect(1/box_ratio)
+      ax[0][0].legend(ncol = 1, labels=['v$_{rms}$'], loc=loc1, \
+      labelspacing = 0.5, edgecolor = 'none', facecolor = 'none', fancybox = False)
 
       ax2 = ax[0][0].twinx()
       ax2.plot(time_Myr_run[run],moving_average_mobility_run[run], linestyle='-', linewidth=1, alpha=0.7, color = '#ffffff')
@@ -557,6 +587,8 @@ for path in model_list:
       ax2.set_yticks(mobility_ticks)
       ax2.set_ylabel('Mobility',labelpad=4)
       ax2.set_box_aspect(1/box_ratio)
+      ax2.legend(ncol = 1, labels=['mobility'], loc=loc2, \
+      labelspacing = 0.5, labelcolor = '#ffffff', edgecolor = 'none', facecolor = 'none', fancybox = False)
 
       ax[1][0].plot(time_Myr_step_run[run],TotalTTGmass_run[run]/present_day_TTG, linestyle='-', linewidth=1, alpha=1, color = '#000000')
       ax[1][0].fill_betweenx(time_Myr_run[run],0.,469.,  linewidth=0,color = '#AE027E',alpha=1,edgecolor='none')

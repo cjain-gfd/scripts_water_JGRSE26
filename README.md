@@ -1,5 +1,5 @@
 # Plotting scripts and animations for Jain & Sobolev (2026b, JGR: Solid Earth)
-Plotting scripts and animations for Jain &amp; Sobolev (2026), Controls on the tectonic evolution of the early Earth: 2. Contrasted effects of water. Journal of Geophysical Research: Solid Earth
+Plotting scripts and animations for Jain, C., &amp; Sobolev, S. V. (2026), Controls on the tectonic evolution of the early Earth: 2. Contrasted effects of water. *Journal of Geophysical Research: Solid Earth*, 131, e2026JB034564. [https://doi.org/10.1029/2026JB034564](https://doi.org/10.1029/2026JB034564)
 
 # Repository structure
     .
